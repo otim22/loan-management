@@ -16,7 +16,7 @@
 
 
 $router->get('/', function () use ($router) {
-    echo "<center> Welcome </center>";
+    echo "<center> Welcome to our Loan Management API </center>";
 });
 
 $router->get('/version', function () use ($router) {
