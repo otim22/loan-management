@@ -13,6 +13,21 @@
 |
 */
 
+
+
 $router->get('/', function () use ($router) {
+    echo "<center> Welcome </center>";
+});
+
+$router->get('/version', function () use ($router) {
     return $router->app->version();
+});
+
+Route::group([
+    'prefix' => 'api/v1'
+], function ($router) {
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('user-profile', 'AuthController@profile');
 });
