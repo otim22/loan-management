@@ -1,8 +1,8 @@
-# Loan Managemwnt App
+# Loan Management App
 
-[![Build Status](https://img.shields.io/travis/gothinkster/laravel-realworld-example-app/master.svg)](https://travis-ci.org/gothinkster/laravel-realworld-example-app) [![Gitter](https://img.shields.io/gitter/room/realworld-dev/laravel.svg)](https://gitter.im/realworld-dev/laravel) [![GitHub stars](https://img.shields.io/github/stars/gothinkster/laravel-realworld-example-app.svg)](https://github.com/gothinkster/laravel-realworld-example-app/stargazers) [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE)
+<!-- [![Build Status](https://img.shields.io/travis/gothinkster/laravel-realworld-example-app/master.svg)](https://travis-ci.org/gothinkster/laravel-realworld-example-app) [![Gitter](https://img.shields.io/gitter/room/realworld-dev/laravel.svg)](https://gitter.im/realworld-dev/laravel) [![GitHub stars](https://img.shields.io/github/stars/gothinkster/laravel-realworld-example-app.svg)](https://github.com/gothinkster/laravel-realworld-example-app/stargazers) [![GitHub license](https://img.shields.io/github/license/gothinkster/laravel-realworld-example-app.svg)](https://raw.githubusercontent.com/gothinkster/laravel-realworld-example-app/master/LICENSE) -->
 
-> ### Lumen application codebase (Laravel's microframe API) containing auth, account checking, loan acquistion et cetera and adheres to standard development practices of APIs.
+> ### This a Lumen application codebase (Laravel's microframe API) containing auth, account checking, loan acquistion et cetera and adheres to standard development practices of APIs.
 
 This repo is functionality complete — PRs and issues welcome!
 
@@ -12,7 +12,7 @@ This repo is functionality complete — PRs and issues welcome!
 
 ## Installation
 
-Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/10.x)
+Please check the official laravel installation guide for server requirements before you start. [Official documentation](https://laravel.com/docs/10.x)
 
 
 Clone the repository
@@ -52,15 +52,21 @@ You can now access the server at http://localhost:8000
 **TL;DR command list**
 
     git clone git@github.com:otim22/loan-management.git
+    
     cd loan-management
+    
     composer install
+    
     cp .env.example .env
+    
     php artisan key:generate
+    
     php artisan jwt:generate 
     
 **Make sure you set the correct database connection information before running the migrations** [Environment variables](#environment-variables)
 
     php artisan migrate
+    
     php artisan serve
 
 ## Database seeding
@@ -141,3 +147,50 @@ This applications uses JSON Web Token (JWT) to handle authentication. The token 
  
 - https://jwt.io/introduction/
 - https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html
+
+
+----------
+ 
+# Deployment
+ 
+Make you install deployer on your local machine. By running the following 
+    composer require --dev deployer/deployer
+ 
+To initialize deployer in your project run:
+    vendor/bin/dep init
+
+Add next alias to your .bashrc file:
+    alias dep='vendor/bin/dep'
+
+Now lets cd into the project and run the following command:
+    dep init
+
+Check a sample of deploy script in the root project called "deploy.sample.php"
+
+To deploy the project:
+    dep deploy
+
+Ssh to the host, for example, for editing .env file:
+    dep ssh
+
+**TL;DR command list**  
+
+    composer require --dev deployer/deployer
+    
+    vendor/bin/dep init
+    
+    alias dep='vendor/bin/dep'
+    
+    dep init
+    
+    dep deploy
+
+Please find the deployer documentation below here 
+- https://deployer.org/docs/7.x/getting-started
+
+
+----------
+
+# Done!!
+
+Yah! You are finally done.
