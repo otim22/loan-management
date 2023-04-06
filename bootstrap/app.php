@@ -24,9 +24,10 @@ $app = new Laravel\Lumen\Application(
 );
 
 $app->withFacades();
-
 $app->withEloquent();
-
+$app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
+$app->register(\Inspector\Laravel\InspectorServiceProvider::class);
+$app->register(Illuminate\Redis\RedisServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
@@ -45,7 +46,7 @@ $app->singleton(
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    App\Console\Kernel::class
+    App\Console\Kernel::class,
 );
 
 /*
@@ -60,7 +61,7 @@ $app->singleton(
 */
 
 $app->configure('app');
-$app->configure('jwt');
+
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
@@ -78,6 +79,7 @@ $app->configure('jwt');
 
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
+    'role' => App\Http\Middleware\RoleAuthorization::class,
 ]);
 
 /*
