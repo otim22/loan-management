@@ -129,10 +129,6 @@ The api can now be accessed at
 
     http://localhost:8000
 
-Find an invite to Postman below and test the endpoints
-
-    https://app.getpostman.com/join-team?invite_code=9f59467bbf22d370bf0b010a4b66fdb3&target_code=bcacafe6133e03ca7339a31e70d18a92
-
 Request headers
 
 | **Required** 	| **Key**              	| **Value**            	|
@@ -141,7 +137,10 @@ Request headers
 | Yes      	| X-Requested-With 	| XMLHttpRequest   	|
 | Yes 	    | Authorization    	| Token {JWT}      	|
 
-Refer the [api specification](#api-specification) for more info.
+
+Find an invite to Postman below and test the endpoints
+
+    https://app.getpostman.com/join-team?invite_code=9f59467bbf22d370bf0b010a4b66fdb3&target_code=bcacafe6133e03ca7339a31e70d18a92
 
 ----------
  
